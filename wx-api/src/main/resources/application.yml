@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: db, core, wx
+  messages:
+    encoding: UTF-8
+
+server:
+  port: 8082
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    com.tonic.wx:  DEBUG
+    com.tonic:  ERROR

@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    druid:
+      url:  jdbc:mysql://localhost:3306/litemall #?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
+      username: litemall
+      password: litemall123456
+      #初始化大小、最小、最大连接数
+      initial-size: 10
+      min-idle: 10
+      max-active: 50
+      # 配置获取连接等待超时的时间
+      max-wait: 600000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: SELECT 1 FROM DUAL
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      filter:  stat,wall
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
